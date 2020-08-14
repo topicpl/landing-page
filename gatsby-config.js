@@ -6,7 +6,17 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [`gatsby-plugin-react-helmet`],
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-i18n",
+      options: {
+        langKeyDefault: "en",
+        useLangKeyLayout: false,
+      },
+    },
+  ],
   siteMetadata: {
     title: `Topic — Welcome Page`,
     siteUrl: `https://thetopic.pl`,
