@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import favicon from "../../public/16maincir.png"
+import favicon from "../assets/logos/16maincir.png"
 import MasterStyle from "../assets/styles/MasterStyle"
 import Home from "./home/index.en"
 

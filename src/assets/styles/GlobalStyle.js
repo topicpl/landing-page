@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -10,8 +10,8 @@ const GlobalStyle = createGlobalStyle`
     html,
     body,
     #root {
-      background: ${({ theme }) => theme.color.grey[950]};
-      color: ${({ theme }) => theme.color.white};
+      background: ${({ theme }) => theme.color.white};
+      color: ${({ theme }) => theme.color.grey[950]};
       font-family: ${({ theme }) => theme.font.family};
       font-weight: ${({ theme }) => theme.font.weight.regular};
       margin: 0 !important;
@@ -42,5 +42,5 @@ const GlobalStyle = createGlobalStyle`
       outline: none;
     }
 
-`;
-export default GlobalStyle;
+`
+export default GlobalStyle
