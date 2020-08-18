@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import TwitterIcon from "@material-ui/icons/Twitter"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
-import Wave from "./Wave"
 
 const hamburgerLinks = [
   { text: "Why Topic?", href: "why-us" },
@@ -81,6 +80,10 @@ const Container = styled.div`
     isOpen
       ? "transform 0.3s 0s, color 0.35s 0.2s ease-in-out"
       : "transform 0.3s 0s, color 0s 0s ease-in-out"};
+
+  -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
 `
 const HamburgerContainer = styled.div`
   width: calc(100% - 64px);

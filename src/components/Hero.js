@@ -24,6 +24,7 @@ const Container = styled.main`
   width: 100%;
   margin-top: 120px;
   text-align: center;
+  background-color: ${({ theme }) => theme.color.white};
 `
 const Heading = styled.span`
   font-size: 2.2rem;
