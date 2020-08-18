@@ -33,7 +33,7 @@ const Hamburger = ({ isOpen }) => {
         ))}
         <SocialContainer>
           {socialLinks.map(item => (
-            <Link to={item.href}>
+            <Link to={item.href} key={"social__" + item.href}>
               <item.icon />
             </Link>
           ))}
