@@ -109,4 +109,10 @@ const SocialContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media (min-width: 500px) {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `

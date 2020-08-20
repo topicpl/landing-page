@@ -58,9 +58,9 @@ const Container = styled.header`
       cursor: pointer;
     }
 
-    @media (min-width: 800px) {
+    /* @media (min-width: 800px) {
       display: none;
-    }
+    } */
   }
 
   #close-btn {

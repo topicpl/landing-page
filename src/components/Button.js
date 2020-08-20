@@ -26,4 +26,8 @@ const Container = styled.button`
     border: none;
     outline: none;
   }
+
+  @media (min-width: 500px) {
+    width: 300px;
+  }
 `

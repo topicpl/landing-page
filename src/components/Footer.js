@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import LS from "../assets/images/laptop-small.png"
+import LM from "../assets/images/laptop-medium.png"
+import LL from "../assets/images/laptop-large.png"
 import LogoIcon from "../assets/logos/64mainsq.png"
 import { Link } from "gatsby"
 
@@ -8,7 +10,21 @@ const Footer = () => {
   return (
     <Container>
       <ImgContainer>
-        <img src={LS} />
+        <img
+          src={LS}
+          alt="Mockup showing laptop with three people using the app."
+          class="footer-img__small"
+        />
+        <img
+          src={LM}
+          alt="Mockup showing laptop with three people using the app."
+          class="footer-img__medium"
+        />
+        <img
+          src={LL}
+          alt="Mockup showing laptop with three people using the app."
+          class="footer-img__large"
+        />
       </ImgContainer>
       <FooterContainer>
         <Icon src={LogoIcon}></Icon>
@@ -64,13 +80,49 @@ const Container = styled.div`
 const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
+
+  .footer-img {
+    &__small {
+      display: inline;
+    }
+    &__medium {
+      display: none;
+    }
+    &__large {
+      display: none;
+    }
+    @media (min-width: 600px) {
+      &__small {
+        display: none;
+      }
+      &__medium {
+        display: inline;
+      }
+      &__large {
+        display: none;
+      }
+    }
+    @media (min-width: 1500px) {
+      &__small {
+        display: none;
+      }
+      &__medium {
+        display: none;
+      }
+      &__large {
+        display: inline;
+      }
+    }
+  }
 `
 const FooterContainer = styled.footer`
-  margin-top: 150px;
   display: flex;
   justify-content: center;
   justify-content: space-between;
   color: ${({ theme }) => theme.color.white};
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 150px;
 
   b {
     margin-bottom: 20px;

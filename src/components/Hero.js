@@ -25,6 +25,12 @@ const Container = styled.main`
   margin-top: 120px;
   text-align: center;
   background-color: ${({ theme }) => theme.color.white};
+
+  @media (min-width: 500px) {
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `
 const Heading = styled.span`
   font-size: 2.2rem;
@@ -37,4 +43,8 @@ const Heading = styled.span`
 const Text = styled.a`
   display: block;
   margin: 20px 0 50px 0;
+
+  @media (min-width: 500px) {
+    margin: 50px 0 80px 0;
+  }
 `
