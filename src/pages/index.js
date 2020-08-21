@@ -9,8 +9,18 @@ export default function Main() {
     <MasterStyle>
       <Helmet>
         <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="The platform for people with passion."
+        />
+        <meta
+          name="keywords"
+          content="videochat, meet, interests, chat, video, people, talk"
+        />
+        <meta name="author" content="Topic team" />
         <title>Topic — Welcome Page</title>
         <link rel="icon" href={favicon} />
+        <html lang="en" />
       </Helmet>
       {/* put logic if needed on language detection */}
       <Home />

@@ -11,7 +11,7 @@ const Footer = () => {
         <Gallery />
       </div>
       <FooterContainer>
-        <Icon src={LogoIcon}></Icon>
+        <Icon src={LogoIcon} alt="Topic logo"></Icon>
         <TextContainer>
           <b>Product</b>
           <Text>
