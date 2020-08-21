@@ -14,13 +14,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: "gatsby-plugin-i18n",
-      options: {
-        langKeyDefault: "en",
-        useLangKeyLayout: false,
-      },
-    },
-    {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: `https://thetopic.pl`,

@@ -3,19 +3,22 @@ import styled from "styled-components"
 import Button from "./Button"
 import Gallery from "./Gallery"
 
-const Hero = () => {
+const Hero = ({ lang }) => {
   return (
     <Container>
       <section>
         <Heading>
-          The platform for people with <span>passion</span>.
+          {lang === "pl"
+            ? "Platforma dla ludzi z"
+            : "The platform for people with"}{" "}
+          <span>{lang === "pl" ? "pasją" : "passion"}</span>.
         </Heading>
         <Text>
-          Topic is a video chat linking people with the same passion. Our
-          platform allows you to learn, talk on subjects you love, or even meet
-          a soulmate that gets your interests.
+          {lang === "pl"
+            ? "Topic to video chat łączący ludzi z tą samą pasją. Nasza platforma pozwoli Ci się uczyć, rozmawiać na tematy, które kochasz, a nawet poznać drógą połówkę podzielającą twoje zainteresowania."
+            : "Topic is a video chat linking people with the same passion. Our platform allows you to learn, talk on subjects you love, or even meet a soulmate that gets your interests."}
         </Text>
-        <Button />
+        <Button lang={lang} />
       </section>
       <div id="hero-gallery">
         <Gallery />
@@ -43,6 +46,10 @@ const Container = styled.main`
     }
   }
 
+  @media (max-width: 500px) {
+    padding: 0 32px;
+  }
+
   @media (min-width: 500px) {
     width: 420px;
     margin-left: auto;
@@ -58,7 +65,7 @@ const Container = styled.main`
     align-items: center;
   }
 
-  @media (min-width: 1920px) {
+  @media (min-width: 1921px) {
     width: 1800px;
     margin-left: auto;
     margin-right: auto;

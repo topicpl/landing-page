@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 
-const Button = () => {
-  return <Container>Meet someone</Container>
+const Button = ({ lang }) => {
+  return (
+    <Container>{lang === "pl" ? "Poznaj kogoś" : "Meet someone"}</Container>
+  )
 }
 
 export default Button
@@ -19,6 +21,7 @@ const Container = styled.button`
   -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
   transition: background-color 0.5s 0s;
+  font-size: 1rem;
 
   :hover {
     cursor: pointer;

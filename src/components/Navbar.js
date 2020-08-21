@@ -9,7 +9,7 @@ import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import { Link } from "gatsby"
 
-const Navbar = ({ refProp }) => {
+const Navbar = ({ refProp, lang }) => {
   const [isMenuOpen, setMenuState] = useState(false)
 
   const toggleMenu = () => {
@@ -17,9 +17,9 @@ const Navbar = ({ refProp }) => {
   }
 
   const sitesLinks = [
-    { text: "Why Topic?", href: "why-us" },
-    { text: "About", href: "about" },
-    { text: "FAQ", href: "faq" },
+    { text: ["Why Topic?", "Dlaczego Topic?"], href: "why-us" },
+    { text: ["About", "O nas"], href: "about" },
+    { text: ["FAQ", "FAQ"], href: "faq" },
   ]
 
   const socialLinks = [
@@ -38,6 +38,7 @@ const Navbar = ({ refProp }) => {
       )}
       <Hamburger
         isOpen={isMenuOpen}
+        lang={lang}
         toggleMenu={toggleMenu}
         linkRef={refProp}
       />
@@ -49,7 +50,7 @@ const Navbar = ({ refProp }) => {
               key={"sites-desktop__" + item.href}
               class="link"
             >
-              <span>{item.text}</span>
+              <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
             </Link>
           ))}
         </SitesContainer>
@@ -58,6 +59,7 @@ const Navbar = ({ refProp }) => {
             <Link
               to={item.href}
               target="_blank"
+              rel="noreferrer"
               key={"social-desktop__" + item.href}
               class="link"
             >

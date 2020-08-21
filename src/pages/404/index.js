@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 
-const Page404 = () => {
-  return <Container>404EN</Container>
+const page404 = () => {
+  return <Container>404</Container>
 }
 
-export default Page404
+export default page404
 
 const Container = styled.div``

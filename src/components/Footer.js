@@ -4,7 +4,14 @@ import LogoIcon from "../assets/logos/64mainsq.png"
 import Gallery from "./Gallery"
 import { Link } from "gatsby"
 
-const Footer = () => {
+const Footer = ({ lang }) => {
+  const footerList = [
+    { text: ["Help & Support", "Pomoc & Support"], href: "help" },
+    { text: ["Feedback", "Opinia zwrotna"], href: "feedback" },
+    { text: ["Terms", "Warunki korzystania"], href: "terms" },
+    { text: ["Privacy", "Polityka prywatności"], href: "privacy" },
+  ]
+
   return (
     <Container>
       <div id="footer-gallery">
@@ -13,7 +20,7 @@ const Footer = () => {
       <FooterContainer>
         <Icon src={LogoIcon} alt="Topic logo"></Icon>
         <TextContainer>
-          <b>Product</b>
+          <b>{lang === "pl" ? "Produkt" : "Product"}</b>
           <Text>
             <Link to="faq">
               <span>Android App</span>
@@ -26,27 +33,14 @@ const Footer = () => {
           </Text>
         </TextContainer>
         <TextContainer>
-          <b>Resources</b>
-          <Text>
-            <Link to="help">
-              <span>Help & Support</span>
-            </Link>
-          </Text>
-          <Text>
-            <Link to="feedback">
-              <span>Feedback</span>
-            </Link>
-          </Text>
-          <Text>
-            <Link to="terms">
-              <span>Terms</span>
-            </Link>
-          </Text>
-          <Text>
-            <Link to="privacy">
-              <span>Privacy</span>
-            </Link>
-          </Text>
+          <b>{lang === "pl" ? "Zasoby" : "Resources"}</b>
+          {footerList.map(item => (
+            <Text>
+              <Link to={item.href}>
+                <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
+              </Link>
+            </Text>
+          ))}
         </TextContainer>
       </FooterContainer>
     </Container>

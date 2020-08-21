@@ -6,9 +6,9 @@ import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
 
 const hamburgerLinks = [
-  { text: "Why Topic?", href: "why-us" },
-  { text: "About", href: "about" },
-  { text: "FAQ", href: "faq" },
+  { text: ["Why Topic?", "Dlaczego Topic?"], href: "why-us" },
+  { text: ["About", "O nas"], href: "about" },
+  { text: ["FAQ", "FAQ"], href: "faq" },
 ]
 
 const socialLinks = [
@@ -17,7 +17,7 @@ const socialLinks = [
   { icon: InstagramIcon, href: "https://www.instagram.com/topicplatform/" },
 ]
 
-const Hamburger = ({ isOpen }) => {
+const Hamburger = ({ isOpen, lang }) => {
   return (
     <Container isOpen={isOpen}>
       <HamburgerContainer>
@@ -29,7 +29,7 @@ const Hamburger = ({ isOpen }) => {
               class="link"
             >
               <LinkElement>
-                <span>{item.text}</span>
+                <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
               </LinkElement>
             </Link>
           </LinkContainer>
@@ -39,6 +39,7 @@ const Hamburger = ({ isOpen }) => {
             <Link
               to={item.href}
               target="_blank"
+              rel="noreferrer"
               key={"social-hamburger__" + item.href}
               class="link"
             >
