@@ -23,7 +23,11 @@ const Hamburger = ({ isOpen }) => {
       <HamburgerContainer>
         {hamburgerLinks.map(item => (
           <LinkContainer>
-            <Link to={item.href} key={"link-hamburger__" + item.href}>
+            <Link
+              to={item.href}
+              key={"link-hamburger__" + item.href}
+              class="link"
+            >
               <LinkElement>
                 <span>{item.text}</span>
               </LinkElement>
@@ -32,7 +36,11 @@ const Hamburger = ({ isOpen }) => {
         ))}
         <SocialContainer>
           {socialLinks.map(item => (
-            <Link to={item.href} key={"social-hamburger__" + item.href}>
+            <Link
+              to={item.href}
+              key={"social-hamburger__" + item.href}
+              class="link"
+            >
               <item.icon />
             </Link>
           ))}
@@ -84,6 +92,12 @@ const Container = styled.div`
   -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+
+  .link {
+    :hover {
+      color: ${({ theme }) => theme.color.red[500]};
+    }
+  }
 `
 const HamburgerContainer = styled.div`
   width: calc(100% - 64px);

@@ -44,14 +44,22 @@ const Navbar = ({ refProp }) => {
       <DesktopHeaderContainer>
         <SitesContainer>
           {sitesLinks.map(item => (
-            <Link to={item.href} key={"sites-desktop__" + item.href}>
+            <Link
+              to={item.href}
+              key={"sites-desktop__" + item.href}
+              class="link"
+            >
               <span>{item.text}</span>
             </Link>
           ))}
         </SitesContainer>
         <SocialContainer>
           {socialLinks.map(item => (
-            <Link to={item.href} key={"social-desktop__" + item.href}>
+            <Link
+              to={item.href}
+              key={"social-desktop__" + item.href}
+              class="link"
+            >
               <item.icon />
             </Link>
           ))}
@@ -112,6 +120,13 @@ const DesktopHeaderContainer = styled.div`
     display: flex;
     align-content: center;
     justify-content: space-between;
+  }
+
+  .link {
+    transition: color 0.2s 0s;
+    :hover {
+      color: ${({ theme }) => theme.color.red[500]};
+    }
   }
 `
 const SitesContainer = styled.div`

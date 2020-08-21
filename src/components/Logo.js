@@ -1,8 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const Logo = ({ isOpen }) => {
-  return <Container isOpen={isOpen}>topic</Container>
+  return (
+    <Container isOpen={isOpen}>
+      <Link to="/">topic</Link>
+    </Container>
+  )
 }
 
 export default Logo

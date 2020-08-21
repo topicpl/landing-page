@@ -63,6 +63,7 @@ const Container = styled.div`
 
   @media (min-width: 1366px) {
     margin-left: 0;
+
     #footer-gallery {
       display: none;
     }
@@ -91,9 +92,11 @@ const FooterContainer = styled.footer`
 `
 const Text = styled.span`
   margin-bottom: 12px;
+  transition: color 0.5s 0s;
 
   :hover {
     cursor: pointer;
+    color: ${({ theme }) => theme.color.red[500]};
   }
 `
 const Icon = styled.img`
