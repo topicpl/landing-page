@@ -71,15 +71,14 @@ const Navbar = ({ refProp }) => {
 
 export default Navbar
 
-const Container = styled.header`
+const Container = styled.div`
   top: 0;
   left: 0;
   z-index: 2;
   width: 100vw;
   height: 60px;
   padding: 0 32px;
-  position: fixed;
-  float: left;
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: space-between;

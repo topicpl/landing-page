@@ -5,7 +5,11 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: `Topic — Welcome Page`,
+    siteUrl: `https://thetopic.pl`,
+    description: `The platform for people with passion.`,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
@@ -16,10 +20,13 @@ module.exports = {
         useLangKeyLayout: false,
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: `https://thetopic.pl`,
+        policy: [{ userAgent: "*", allow: "/" }],
+        output: `/public/robots.txt`,
+      },
+    },
   ],
-  siteMetadata: {
-    title: `Topic — Welcome Page`,
-    siteUrl: `https://thetopic.pl`,
-    description: `The platform for people with passion.`,
-  },
 }
