@@ -23,7 +23,7 @@ const Hamburger = ({ isOpen }) => {
       <HamburgerContainer>
         {hamburgerLinks.map(item => (
           <LinkContainer>
-            <Link to={item.href} key={"link__" + item.href}>
+            <Link to={item.href} key={"link-hamburger__" + item.href}>
               <LinkElement>
                 <span>{item.text}</span>
               </LinkElement>
@@ -32,7 +32,7 @@ const Hamburger = ({ isOpen }) => {
         ))}
         <SocialContainer>
           {socialLinks.map(item => (
-            <Link to={item.href} key={"social__" + item.href}>
+            <Link to={item.href} key={"social-hamburger__" + item.href}>
               <item.icon />
             </Link>
           ))}
