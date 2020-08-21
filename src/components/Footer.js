@@ -7,7 +7,9 @@ import { Link } from "gatsby"
 const Footer = () => {
   return (
     <Container>
-      <Gallery />
+      <div id="footer-gallery">
+        <Gallery />
+      </div>
       <FooterContainer>
         <Icon src={LogoIcon}></Icon>
         <TextContainer>
@@ -58,6 +60,13 @@ const Container = styled.div`
   width: 100vw;
   margin: 120px 0 0 -32px;
   padding: 70px 32px 100px 32px;
+
+  @media (min-width: 1366px) {
+    margin-left: 0;
+    #footer-gallery {
+      display: none;
+    }
+  }
 `
 const FooterContainer = styled.footer`
   display: flex;
@@ -75,6 +84,9 @@ const FooterContainer = styled.footer`
   @media (max-width: 300px) {
     width: 100vw;
     margin-left: -32px;
+  }
+  @media (min-width: 1366px) {
+    max-width: 700px;
   }
 `
 const Text = styled.span`

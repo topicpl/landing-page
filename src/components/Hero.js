@@ -6,7 +6,7 @@ import Gallery from "./Gallery"
 const Hero = () => {
   return (
     <Container>
-      <LeftSection>
+      <section>
         <Heading>
           The platform for people with <span>passion</span>.
         </Heading>
@@ -16,8 +16,10 @@ const Hero = () => {
           a soulmate that gets your interests.
         </Text>
         <Button />
-      </LeftSection>
-      <Gallery />
+      </section>
+      <div id="hero-gallery">
+        <Gallery />
+      </div>
     </Container>
   )
 }
@@ -30,6 +32,17 @@ const Container = styled.main`
   text-align: center;
   background-color: ${({ theme }) => theme.color.white};
 
+  #hero-gallery {
+    margin-right: 150px;
+    @media (max-width: 1365px) {
+      display: none;
+    }
+
+    @media (min-width: 1600px) {
+      margin-right: 0;
+    }
+  }
+
   @media (min-width: 500px) {
     width: 420px;
     margin-left: auto;
@@ -37,17 +50,25 @@ const Container = styled.main`
   }
 
   @media (min-width: 1366px) {
+    width: 100%;
     text-align: left;
     margin: 200px 0 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `
-const LeftSection = styled.section``
 const Heading = styled.span`
   font-size: 2.2rem;
   font-weight: ${({ theme }) => theme.font.weight.bold};
 
   span {
     color: ${({ theme }) => theme.color.red[500]};
+  }
+
+  @media (min-width: 1366px) {
+    display: block;
+    width: 380px;
   }
 `
 const Text = styled.a`

@@ -38,6 +38,7 @@ const Container = styled.div`
 
   @media (min-width: 1366px) {
     background-color: ${({ theme }) => theme.color.white};
+    width: 60%;
     padding: 0;
     margin: 0;
   }
@@ -52,6 +53,7 @@ const Container = styled.div`
     &__large {
       display: none;
     }
+
     @media (min-width: 600px) {
       &__small {
         display: none;
@@ -63,7 +65,8 @@ const Container = styled.div`
         display: none;
       }
     }
-    @media (min-width: 1366px) {
+
+    @media (min-width: 1600px) {
       &__small {
         display: none;
       }
