@@ -57,6 +57,7 @@ const Navbar = ({ refProp }) => {
           {socialLinks.map(item => (
             <Link
               to={item.href}
+              target="_blank"
               key={"social-desktop__" + item.href}
               class="link"
             >

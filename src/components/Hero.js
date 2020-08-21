@@ -57,6 +57,12 @@ const Container = styled.main`
     justify-content: space-between;
     align-items: center;
   }
+
+  @media (min-width: 1920px) {
+    width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `
 const Heading = styled.span`
   font-size: 2.2rem;

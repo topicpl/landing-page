@@ -58,7 +58,7 @@ export default Footer
 const Container = styled.div`
   background-color: ${({ theme }) => theme.color.grey[950]};
   width: 100vw;
-  margin: 120px 0 0 -32px;
+  margin-top: 120px;
   padding: 70px 32px 100px 32px;
 
   @media (min-width: 1366px) {

@@ -38,6 +38,7 @@ const Hamburger = ({ isOpen }) => {
           {socialLinks.map(item => (
             <Link
               to={item.href}
+              target="_blank"
               key={"social-hamburger__" + item.href}
               class="link"
             >
