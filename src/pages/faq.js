@@ -19,7 +19,6 @@ const FAQ = () => {
       setLang("en")
       setFaqFile(enFAQ)
     }
-    console.log(lang)
   }, [lang])
 
   return (

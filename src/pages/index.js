@@ -17,7 +17,6 @@ export default function Main() {
     // if (detectedLang === "pl-PL" || detectedLang === "pl") setLang("pl")
     if (detectedLang.includes("pl")) setLang("pl")
     else setLang("en")
-    console.log(lang)
   }, [lang])
 
   return (
