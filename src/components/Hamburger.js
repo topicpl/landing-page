@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 import TwitterIcon from "@material-ui/icons/Twitter"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
@@ -23,29 +22,23 @@ const Hamburger = ({ isOpen, lang }) => {
       <HamburgerContainer>
         {hamburgerLinks.map(item => (
           <LinkContainer>
-            <Link
-              to={"/" + item.href + "/"}
-              key={"link-hamburger__" + item.href}
-              class="link"
-              replace
-            >
+            <a href={item.href} key={"link-hamburger__" + item.href}>
               <LinkElement>
                 <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
               </LinkElement>
-            </Link>
+            </a>
           </LinkContainer>
         ))}
         <SocialContainer>
           {socialLinks.map(item => (
-            <Link
-              to={item.href}
+            <a
+              href={item.href}
               target="_blank"
               rel="noreferrer"
               key={"social-hamburger__" + item.href}
-              class="link"
             >
               <item.icon />
-            </Link>
+            </a>
           ))}
         </SocialContainer>
       </HamburgerContainer>
@@ -96,7 +89,7 @@ const Container = styled.div`
   -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
 
-  .link {
+  a {
     :hover {
       color: ${({ theme }) => theme.color.red[500]};
     }

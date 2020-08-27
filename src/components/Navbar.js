@@ -7,7 +7,6 @@ import Hamburger from "./Hamburger"
 import TwitterIcon from "@material-ui/icons/Twitter"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
-import { Link } from "gatsby"
 
 const Navbar = ({ refProp, lang }) => {
   const [isMenuOpen, setMenuState] = useState(false)
@@ -45,27 +44,21 @@ const Navbar = ({ refProp, lang }) => {
       <DesktopHeaderContainer>
         <SitesContainer>
           {sitesLinks.map(item => (
-            <Link
-              to={"/" + item.href}
-              key={"sites-desktop__" + item.href}
-              class="link"
-              replace
-            >
+            <a href={item.href} key={"sites-desktop__" + item.href}>
               <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
-            </Link>
+            </a>
           ))}
         </SitesContainer>
         <SocialContainer>
           {socialLinks.map(item => (
-            <Link
-              to={item.href}
+            <a
+              href={item.href}
               target="_blank"
               rel="noreferrer"
               key={"social-desktop__" + item.href}
-              class="link"
             >
               <item.icon />
-            </Link>
+            </a>
           ))}
         </SocialContainer>
       </DesktopHeaderContainer>
@@ -125,7 +118,7 @@ const DesktopHeaderContainer = styled.div`
     justify-content: space-between;
   }
 
-  .link {
+  a {
     transition: color 0.2s 0s;
     :hover {
       color: ${({ theme }) => theme.color.red[500]};

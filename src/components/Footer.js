@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import LogoIcon from "../assets/logos/64mainsq.png"
 import Gallery from "./Gallery"
-import { Link } from "gatsby"
 
 const Footer = ({ lang }) => {
   const footerList = [
@@ -22,23 +21,23 @@ const Footer = ({ lang }) => {
         <TextContainer>
           <b>{lang === "pl" ? "Produkt" : "Product"}</b>
           <Text>
-            <Link to="faq">
+            <a href="faq">
               <span>Android App</span>
-            </Link>
+            </a>
           </Text>
           <Text>
-            <Link to="faq">
+            <a href="faq">
               <span>iOS App</span>
-            </Link>
+            </a>
           </Text>
         </TextContainer>
         <TextContainer>
           <b>{lang === "pl" ? "Zasoby" : "Resources"}</b>
           {footerList.map(item => (
             <Text>
-              <Link to={item.href}>
+              <a href={item.href}>
                 <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
-              </Link>
+              </a>
             </Text>
           ))}
         </TextContainer>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import detectBrowserLanguage from "detect-browser-language"
-import MasterStyle from "../../assets/styles/MasterStyle.js"
-import Navbar from "../../components/Navbar"
-import enFAQ from "../../assets/txts/enFAQ"
-import plFAQ from "../../assets/txts/plFAQ"
+import MasterStyle from "../assets/styles/MasterStyle.js"
+import Navbar from "../components/Navbar"
+import enFAQ from "../assets/txts/enFAQ"
+import plFAQ from "../assets/txts/plFAQ"
 
 const FAQ = () => {
   const [lang, setLang] = useState(null)
