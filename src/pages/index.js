@@ -9,13 +9,13 @@ import Hero from "../components/Hero"
 import Footer from "../components/Footer"
 
 export default function Main() {
-  const [lang, setLang] = useState("en")
+  const [lang, setLang] = useState(null)
 
   useEffect(() => {
     const detectedLang = detectBrowserLanguage()
-    if (detectedLang === "pl-PL" || detectedLang === "pl") setLang("pl")
+    // if (detectedLang === "pl-PL" || detectedLang === "pl") setLang("pl")
+    if (detectedLang.includes("pl")) setLang("pl")
     else setLang("en")
-    console.log(lang)
   }, [lang])
 
   return (

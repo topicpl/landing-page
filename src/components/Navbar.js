@@ -46,9 +46,10 @@ const Navbar = ({ refProp, lang }) => {
         <SitesContainer>
           {sitesLinks.map(item => (
             <Link
-              to={item.href}
+              to={"/" + item.href}
               key={"sites-desktop__" + item.href}
               class="link"
+              replace
             >
               <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
             </Link>
