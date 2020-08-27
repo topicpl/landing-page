@@ -7,12 +7,12 @@ import enFAQ from "../assets/txts/enFAQ"
 import plFAQ from "../assets/txts/plFAQ"
 
 const FAQ = () => {
-  const [lang, setLang] = useState(null)
+  const [lang, setLang] = useState("pl")
   const [faqFile, setFaqFile] = useState(plFAQ)
 
   useEffect(() => {
     const detectedLang = detectBrowserLanguage()
-    if (detectedLang === "pl-PL" || detectedLang === "pl") {
+    if (detectedLang.includes("pl")) {
       setLang("pl")
       setFaqFile(plFAQ)
     } else {

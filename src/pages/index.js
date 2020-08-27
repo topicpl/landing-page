@@ -9,7 +9,8 @@ import Hero from "../components/Hero"
 import Footer from "../components/Footer"
 
 export default function Main() {
-  const [lang, setLang] = useState("en")
+  // TODO: change to url language because language change is visible and slow
+  const [lang, setLang] = useState("pl")
 
   useEffect(() => {
     const detectedLang = detectBrowserLanguage()
@@ -36,8 +37,6 @@ export default function Main() {
         <link rel="icon" href={favicon} />
         <html lang="en" />
       </Helmet>
-      {/* put logic if needed on language detection */}
-
       <Container>
         <Navbar lang={lang} />
         <Hero lang={lang} />
