@@ -6,6 +6,7 @@ const Helmet = () => (
   <HelmetRoot>
     <meta charSet="utf-8" />
     <meta name="description" content="The platform for people with passion." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="keywords"
       content="videochat, meet, interests, chat, video, people, talk"

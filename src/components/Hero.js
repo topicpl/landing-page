@@ -41,8 +41,10 @@ const Container = styled.main`
       display: none;
     }
 
-    @media (min-width: 1600px) {
-      margin-right: 0;
+    /* fixes the firefox too small img bug */
+    @media (min-width: 1366px) {
+      width: 100%;
+      margin-right: -500px;
     }
   }
 
@@ -50,7 +52,7 @@ const Container = styled.main`
     padding: 0 32px;
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 501px) {
     width: 420px;
     margin-left: auto;
     margin-right: auto;

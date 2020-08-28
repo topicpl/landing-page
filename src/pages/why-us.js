@@ -8,7 +8,6 @@ import Reason from "../components/why-us/Reason"
 import Content from "../components/why-us/Content"
 import Functions from "../components/why-us/Functions"
 import Quotes from "../components/why-us/Quotes"
-import Posts from "../components/why-us/Posts"
 import Footer from "../components/Footer"
 
 const WhyUs = () => {
@@ -29,7 +28,6 @@ const WhyUs = () => {
         <Content lang={lang} />
         <Functions lang={lang} />
         <Quotes lang={lang} />
-        <Posts lang={lang} />
       </Container>
       <Footer />
     </MasterStyle>
