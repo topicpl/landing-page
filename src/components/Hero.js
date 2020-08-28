@@ -61,7 +61,7 @@ const Container = styled.main`
   @media (min-width: 1366px) {
     width: 100%;
     text-align: left;
-    margin: 200px 0 0 100px;
+    margin: 120px 0 200px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;

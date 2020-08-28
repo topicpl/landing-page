@@ -10,16 +10,5 @@ module.exports = {
     siteUrl: `https://thetopic.pl`,
     description: `The platform for people with passion.`,
   },
-  plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: `https://thetopic.pl`,
-        policy: [{ userAgent: "*", allow: "/" }],
-        output: `/public/robots.txt`,
-      },
-    },
-  ],
+  plugins: [`gatsby-plugin-react-helmet`, `gatsby-plugin-styled-components`],
 }

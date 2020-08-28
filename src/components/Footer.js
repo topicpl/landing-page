@@ -8,8 +8,8 @@ const Footer = ({ lang }) => {
 
   const footerList = [
     // TODO add sites for help and feedback
-    { text: ["Help & Support", "Pomoc & Support"], href: "/" },
-    { text: ["Feedback", "Opinia zwrotna"], href: "/" },
+    { text: ["Help & Support", "Pomoc & Support"], href: "why-us" },
+    { text: ["Feedback", "Opinia zwrotna"], href: "why-us" },
     { text: ["Terms", "Warunki korzystania"], href: "terms" },
     { text: ["Privacy", "Polityka prywatności"], href: "privacy" },
   ]
@@ -28,12 +28,12 @@ const Footer = ({ lang }) => {
         <TextContainer>
           <b>{lang === "pl" ? "Produkt" : "Product"}</b>
           <Text>
-            <a href="faq">
+            <a href="/faq" replace>
               <span>Android App</span>
             </a>
           </Text>
           <Text>
-            <a href="faq">
+            <a href="/faq" replace>
               <span>iOS App</span>
             </a>
           </Text>
@@ -42,7 +42,7 @@ const Footer = ({ lang }) => {
           <b>{lang === "pl" ? "Zasoby" : "Resources"}</b>
           {footerList.map(item => (
             <Text key={"footer__" + item.href}>
-              <a href={item.href}>
+              <a href={"/" + item.href} replace>
                 <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
               </a>
             </Text>

@@ -22,7 +22,7 @@ const Hamburger = ({ isOpen, lang }) => {
       <HamburgerContainer>
         {hamburgerLinks.map(item => (
           <LinkContainer key={"link-hamburger__" + item.text[0]}>
-            <a href={item.href}>
+            <a href={"/" + item.href} replace>
               <LinkElement>
                 <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
               </LinkElement>
