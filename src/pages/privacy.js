@@ -6,22 +6,29 @@ import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import plPP from "../assets/txts/plPP"
+import enPP from "../assets/txts/enPP"
 
 const Privacy = () => {
   const [lang, setLang] = useState("pl")
+  const [ppFile, setLangPP] = useState(plPP)
 
   useEffect(() => {
     const detectedLang = detectBrowserLanguage()
-    if (detectedLang.includes("pl")) setLang("pl")
-    else setLang("en")
-  }, [lang])
+    if (detectedLang.includes("pl")) {
+      setLang("pl")
+      setLangPP(plPP)
+    } else {
+      setLang("en")
+      setLangPP(enPP)
+    }
+  }, [lang, ppFile])
 
   return (
     <MasterStyle>
       <Helmet />
       <Navbar lang={lang} />
       <Container>
-        {plPP.map(item => (
+        {ppFile.map(item => (
           <>
             <Header>{item.header1}</Header>
             <b>{item.text1}</b>

@@ -21,7 +21,7 @@ const FAQ = () => {
       setLang("en")
       setFaqFile(enFAQ)
     }
-  }, [lang])
+  }, [lang, faqFile])
 
   return (
     <MasterStyle>

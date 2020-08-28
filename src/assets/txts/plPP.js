@@ -1,4 +1,4 @@
-const plPrivacyPolicy = [
+const plPP = [
   {
     header1: "Wprowadzenie",
     text2:
@@ -155,4 +155,4 @@ const plPrivacyPolicy = [
   },
 ]
 
-export default plPrivacyPolicy
+export default plPP
