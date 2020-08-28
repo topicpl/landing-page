@@ -20,7 +20,7 @@ const About = () => {
       <Helmet />
       <Navbar lang={lang} />
       <Container>about</Container>
-      <Footer />
+      <Footer lang={lang} />
     </MasterStyle>
   )
 }

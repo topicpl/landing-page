@@ -36,7 +36,7 @@ const Privacy = () => {
           </>
         ))}
       </Container>
-      <Footer />
+      <Footer lang={lang} />
     </MasterStyle>
   )
 }

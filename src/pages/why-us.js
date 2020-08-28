@@ -29,7 +29,7 @@ const WhyUs = () => {
         <Functions lang={lang} />
         <Quotes lang={lang} />
       </Container>
-      <Footer />
+      <Footer lang={lang} />
     </MasterStyle>
   )
 }

@@ -7,8 +7,9 @@ const Footer = ({ lang }) => {
   const [url, setUrl] = useState("/")
 
   const footerList = [
-    { text: ["Help & Support", "Pomoc & Support"], href: "help" },
-    { text: ["Feedback", "Opinia zwrotna"], href: "feedback" },
+    // TODO add sites for help and feedback
+    { text: ["Help & Support", "Pomoc & Support"], href: "/" },
+    { text: ["Feedback", "Opinia zwrotna"], href: "/" },
     { text: ["Terms", "Warunki korzystania"], href: "terms" },
     { text: ["Privacy", "Polityka prywatności"], href: "privacy" },
   ]

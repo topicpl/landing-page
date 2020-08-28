@@ -132,7 +132,7 @@ const FAQ = () => {
           </Answer>
         )}
       </Container>
-      <Footer />
+      <Footer lang={lang} />
     </MasterStyle>
   )
 }
