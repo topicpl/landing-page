@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import Helmet from "../components/Helmet"
 import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 import plPP from "../assets/txts/plPP"
 
 const Privacy = () => {
@@ -16,6 +18,7 @@ const Privacy = () => {
 
   return (
     <MasterStyle>
+      <Helmet />
       <Navbar lang={lang} />
       <Container>
         {plPP.map(item => (
@@ -26,6 +29,7 @@ const Privacy = () => {
           </>
         ))}
       </Container>
+      <Footer />
     </MasterStyle>
   )
 }
@@ -34,6 +38,7 @@ export default Privacy
 
 const Container = styled.div`
   margin: 0 auto;
+  margin-top: 50px;
   margin-bottom: 150px;
   width: 90%;
   display: flex;

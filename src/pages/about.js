@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import Helmet from "../components/Helmet"
 import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 const About = () => {
   const [lang, setLang] = useState("pl")
@@ -15,8 +17,10 @@ const About = () => {
 
   return (
     <MasterStyle>
+      <Helmet />
       <Navbar lang={lang} />
       <Container>about</Container>
+      <Footer />
     </MasterStyle>
   )
 }

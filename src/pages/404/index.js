@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import Helmet from "../../components/Helmet"
 import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../../assets/styles/MasterStyle.js"
 import Navbar from "../../components/Navbar"
@@ -15,6 +16,7 @@ const Page404 = () => {
 
   return (
     <MasterStyle>
+      <Helmet />
       <Navbar lang={lang} />
       <Container>
         <Top>404</Top>

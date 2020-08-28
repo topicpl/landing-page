@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import Helmet from "../components/Helmet"
 import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 import enFAQ from "../assets/txts/enFAQ"
 import plFAQ from "../assets/txts/plFAQ"
 
@@ -23,6 +25,7 @@ const FAQ = () => {
 
   return (
     <MasterStyle>
+      <Helmet />
       <Navbar lang={lang} />
       <Container>
         {faqFile.map(item => (
@@ -129,6 +132,7 @@ const FAQ = () => {
           </Answer>
         )}
       </Container>
+      <Footer />
     </MasterStyle>
   )
 }
