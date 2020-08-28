@@ -5,6 +5,7 @@ import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import Quotes from "../components/Quotes"
 
 const WhyUs = () => {
   const [lang, setLang] = useState("pl")
@@ -19,7 +20,9 @@ const WhyUs = () => {
     <MasterStyle>
       <Helmet />
       <Navbar lang={lang} />
-      <Container>why us</Container>
+      <Container>
+        <Quotes lang={lang} />
+      </Container>
       <Footer />
     </MasterStyle>
   )
@@ -27,4 +30,7 @@ const WhyUs = () => {
 
 export default WhyUs
 
-const Container = styled.div``
+const Container = styled.div`
+  width: 100%;
+  text-align: center;
+`

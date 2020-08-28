@@ -15,7 +15,7 @@ const Hero = ({ lang }) => {
         </Heading>
         <Text>
           {lang === "pl"
-            ? "Topic to video chat łączący ludzi z tą samą pasją. Nasza platforma pozwoli Ci się uczyć, rozmawiać na tematy, które kochasz, a nawet poznać drógą połówkę podzielającą twoje zainteresowania."
+            ? "Topic to wideo chat łączący ludzi z tą samą pasją. Nasza platforma pozwoli Ci się uczyć, rozmawiać na tematy, które kochasz, a nawet poznać drógą połówkę podzielającą twoje zainteresowania."
             : "Topic is a video chat linking people with the same passion. Our platform allows you to learn, talk on subjects you love, or even meet a soulmate that gets your interests."}
         </Text>
         <Button lang={lang} />

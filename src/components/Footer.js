@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import LogoIcon from "../assets/logos/64mainsq.png"
 import Gallery from "./Gallery"
 
 const Footer = ({ lang }) => {
+  const [url, setUrl] = useState("/")
+
   const footerList = [
     { text: ["Help & Support", "Pomoc & Support"], href: "help" },
     { text: ["Feedback", "Opinia zwrotna"], href: "feedback" },
@@ -11,11 +13,15 @@ const Footer = ({ lang }) => {
     { text: ["Privacy", "Polityka prywatności"], href: "privacy" },
   ]
 
+  useEffect(() => {
+    const detectedUrl = window.location.href.split("/").pop()
+    setUrl(detectedUrl)
+  }, [url])
+
   return (
     <Container>
-      <div id="footer-gallery">
-        <Gallery />
-      </div>
+      {/* dont show Gallery when not in main page */}
+      <div id="footer-gallery">{url !== "" ? null : <Gallery />}</div>
       <FooterContainer>
         <Icon src={LogoIcon} alt="Topic logo"></Icon>
         <TextContainer>
