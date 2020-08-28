@@ -40,7 +40,7 @@ const Footer = ({ lang }) => {
         <TextContainer>
           <b>{lang === "pl" ? "Zasoby" : "Resources"}</b>
           {footerList.map(item => (
-            <Text>
+            <Text key={"footer__" + item.href}>
               <a href={item.href}>
                 <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
               </a>

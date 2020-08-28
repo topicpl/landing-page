@@ -4,8 +4,12 @@ import Helmet from "../components/Helmet"
 import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
+import Reason from "../components/why-us/Reason"
+import Content from "../components/why-us/Content"
+import Functions from "../components/why-us/Functions"
+import Quotes from "../components/why-us/Quotes"
+import Posts from "../components/why-us/Posts"
 import Footer from "../components/Footer"
-import Quotes from "../components/Quotes"
 
 const WhyUs = () => {
   const [lang, setLang] = useState("pl")
@@ -21,7 +25,11 @@ const WhyUs = () => {
       <Helmet />
       <Navbar lang={lang} />
       <Container>
+        <Reason lang={lang} />
+        <Content lang={lang} />
+        <Functions lang={lang} />
         <Quotes lang={lang} />
+        <Posts lang={lang} />
       </Container>
       <Footer />
     </MasterStyle>
@@ -33,4 +41,12 @@ export default WhyUs
 const Container = styled.div`
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-between;
+
+  section {
+    margin: 50px 0 100px 0;
+  }
 `

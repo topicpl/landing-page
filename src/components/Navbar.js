@@ -17,7 +17,7 @@ const Navbar = ({ refProp, lang }) => {
 
   const sitesLinks = [
     { text: ["Why Topic?", "Dlaczego Topic?"], href: "why-us" },
-    { text: ["About", "O nas"], href: "about" },
+    { text: ["About", "O nas"], href: "why-us" },
     { text: ["FAQ", "FAQ"], href: "faq" },
   ]
 
@@ -44,7 +44,7 @@ const Navbar = ({ refProp, lang }) => {
       <DesktopHeaderContainer>
         <SitesContainer>
           {sitesLinks.map(item => (
-            <a href={item.href} key={"sites-desktop__" + item.href}>
+            <a href={item.href} key={"sites-desktop__" + item.text[0]}>
               <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
             </a>
           ))}

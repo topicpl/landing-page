@@ -6,7 +6,7 @@ import InstagramIcon from "@material-ui/icons/Instagram"
 
 const hamburgerLinks = [
   { text: ["Why Topic?", "Dlaczego Topic?"], href: "why-us" },
-  { text: ["About", "O nas"], href: "about" },
+  { text: ["About", "O nas"], href: "why-us" },
   { text: ["FAQ", "FAQ"], href: "faq" },
 ]
 
@@ -21,8 +21,8 @@ const Hamburger = ({ isOpen, lang }) => {
     <Container isOpen={isOpen}>
       <HamburgerContainer>
         {hamburgerLinks.map(item => (
-          <LinkContainer>
-            <a href={item.href} key={"link-hamburger__" + item.href}>
+          <LinkContainer key={"link-hamburger__" + item.text[0]}>
+            <a href={item.href}>
               <LinkElement>
                 <span>{lang === "pl" ? item.text[1] : item.text[0]}</span>
               </LinkElement>

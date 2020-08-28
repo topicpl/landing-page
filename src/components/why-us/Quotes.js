@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import avatarCA from "../assets/images/avatarCA.jpg"
+import avatarCA from "../../assets/images/avatarCA.jpg"
 
 const quotesData = [
   {
@@ -19,7 +19,7 @@ const Quotes = ({ lang }) => {
         {lang === "pl" ? "Co inni o nas myślą?" : "What others think about us?"}
       </QuotesHeader>
       {quotesData.map(item => (
-        <QuotesContainer>
+        <QuotesContainer key={"quotes__" + item.avatar}>
           <QuotesAvatar src={item.avatar}></QuotesAvatar>
           <QuotesText>{item.text}</QuotesText>
           <QuotesAuthor target="_blank" href={item.link}>
@@ -33,7 +33,7 @@ const Quotes = ({ lang }) => {
 
 export default Quotes
 
-const StyledQuotes = styled.div`
+const StyledQuotes = styled.section`
   width: 100%;
 `
 const QuotesHeader = styled.p`
