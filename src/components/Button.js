@@ -3,7 +3,9 @@ import styled from "styled-components"
 
 const Button = ({ lang }) => {
   return (
-    <Container>{lang === "pl" ? "Poznaj kogoś" : "Meet someone"}</Container>
+    <form action="/app">
+      <Container>{lang === "pl" ? "Poznaj kogoś" : "Meet someone"}</Container>
+    </form>
   )
 }
 

@@ -68,7 +68,7 @@ const Navbar = ({ refProp, lang }) => {
 
 export default Navbar
 
-const Container = styled.div`
+const Container = styled.nav`
   top: 0;
   left: 0;
   z-index: 2;
@@ -79,7 +79,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.color.white};
+  background-color: rgba(255, 255, 255, 0.9);
 
   /* -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);

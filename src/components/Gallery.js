@@ -28,7 +28,7 @@ const Gallery = () => {
 
 export default Gallery
 
-const Container = styled.div`
+const Container = styled.aside`
   background-color: ${({ theme }) => theme.color.grey[950]};
   width: 100vw;
   margin: 0 0 150px -32px;

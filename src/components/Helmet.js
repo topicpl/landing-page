@@ -4,6 +4,7 @@ import favicon from "../assets/logos/16maincir.png"
 
 const Helmet = () => (
   <HelmetRoot>
+    <html lang="pl" />
     <meta charSet="utf-8" />
     <meta name="description" content="The platform for people with passion." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,7 +15,6 @@ const Helmet = () => (
     <meta name="author" content="Topic team" />
     <title>Topic — Welcome Page</title>
     <link rel="icon" href={favicon} />
-    <html lang="en" />
   </HelmetRoot>
 )
 

@@ -62,6 +62,7 @@ const Container = styled.div`
 const Header = styled.p`
   font-weight: 700;
   font-size: 1.6rem;
+  text-align: center;
 `
 const Text = styled.p`
   margin: 0;
