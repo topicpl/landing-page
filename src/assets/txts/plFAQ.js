@@ -22,7 +22,7 @@ const plFAQ = [
   {
     Q: 'Kto tworzy zespół Topic?',
     A:
-      'Jesteśmy dwójką przyjaciół ze szkoły średniej, którą właśnie skończyliśmy. Nazywamy się Sala Wojciech i Przybył Marcin, pasjonujemy się takimi dziedzinami jak marketing, biznes i programowanie. Udało się połączyć nasze wspólne zainteresowania, aby stworzyć już kilka projektów.',
+      'Stanowimy zgrany czteroosobowy zespół. Topic tworzą Wojciech Sala, Marek Kręgiel, Jakub Szczerbiński, Marcin Przybył.',
   },
   {
     Q: 'Dlaczego powinienem korzystać z Topic?',
