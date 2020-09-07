@@ -3,9 +3,9 @@ import styled from "styled-components"
 
 const Button = ({ lang }) => {
   return (
-    <form action="/app">
+    <a href="/app">
       <Container>{lang === "pl" ? "Poznaj kogoś" : "Meet someone"}</Container>
-    </form>
+    </a>
   )
 }
 
