@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-
+import { event } from 'react-ga';
 const Button = ({ lang }) => {
+  const setEvent = () => event({ category: 'landing-buttons', action: 'click', label: 'meet-someone' });
   return (
-    <form action="/app">
+    <a href="/app" onClick={setEvent}>
       <Container>{lang === "pl" ? "Poznaj kogoś" : "Meet someone"}</Container>
-    </form>
+    </a>
   )
 }
 
