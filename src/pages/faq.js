@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useIntl } from "gatsby-plugin-intl"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Helmet from "../components/Helmet"
 import MasterStyle from "../assets/styles/MasterStyle.js"
