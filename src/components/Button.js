@@ -1,11 +1,21 @@
 import React from "react"
+import { FormattedMessage } from "gatsby-plugin-intl"
 import styled from "styled-components"
-import { event } from 'react-ga';
-const Button = ({ lang }) => {
-  const setEvent = () => event({ category: 'landing-buttons', action: 'click', label: 'meet-someone' });
+import { event } from "react-ga"
+
+const Button = () => {
+  const setEvent = () =>
+    event({
+      category: "landing-buttons",
+      action: "click",
+      label: "meet-someone",
+    })
+
   return (
     <a href="/app" onClick={setEvent}>
-      <Container>{lang === "pl" ? "Poznaj kogoś" : "Meet someone"}</Container>
+      <Container>
+        <FormattedMessage id="button" />
+      </Container>
     </a>
   )
 }
