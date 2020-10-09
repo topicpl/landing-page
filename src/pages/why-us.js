@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Helmet from "../components/Helmet"
-import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
 import Reason from "../components/why-us/Reason"
@@ -11,25 +11,19 @@ import Quotes from "../components/why-us/Quotes"
 import Footer from "../components/Footer"
 
 const WhyUs = () => {
-  const [lang, setLang] = useState("pl")
-
-  useEffect(() => {
-    const detectedLang = detectBrowserLanguage()
-    if (detectedLang.includes("pl")) setLang("pl")
-    else setLang("en")
-  }, [lang])
-
+  const intl = useIntl()
   return (
     <MasterStyle>
       <Helmet />
-      <Navbar lang={lang} />
+      {/* Text inside these components will be migrated to json files */}
+      <Navbar lang={intl.locale} />
       <Container>
-        <Reason lang={lang} />
-        <Content lang={lang} />
-        <Functions lang={lang} />
-        <Quotes lang={lang} />
+        <Reason lang={intl.locale} />
+        <Content lang={intl.locale} />
+        <Functions lang={intl.locale} />
+        <Quotes lang={intl.locale} />
       </Container>
-      <Footer lang={lang} />
+      <Footer lang={intl.locale} />
     </MasterStyle>
   )
 }

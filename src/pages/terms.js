@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Helmet from "../components/Helmet"
-import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -9,50 +9,28 @@ import enTerms from "../assets/txts/enTerms"
 import plTerms from "../assets/txts/plTerms"
 
 const Terms = () => {
-  const [lang, setLang] = useState("pl")
+  const intl = useIntl()
   const [termsFile, setTermsFile] = useState(plTerms)
 
   useEffect(() => {
-    const detectedLang = detectBrowserLanguage()
-    if (detectedLang.includes("pl")) {
-      setLang("pl")
+    if (intl.locale === "pl") {
       setTermsFile(plTerms)
     } else {
-      setLang("en")
       setTermsFile(enTerms)
     }
-  }, [lang, termsFile])
+  }, [termsFile])
 
   return (
     <MasterStyle>
       <Helmet />
-      <Navbar lang={lang} />
+      <Navbar lang={intl.locale} />
       <Container>
-        {lang === "pl" ? (
-          <>
-            <h1>Regulamin</h1>
-            <p>
-              Topic jest nową formą mediów społecznościowych. Stawiamy na
-              najwyższą jakość dostarczanych przez nas usług. Wideo rozmowy
-              nigdy wcześniej nie były tak bardzo pasjonujące! Prosimy o
-              zachowanie zasad regulaminu, przestrzeganie kultury na czacie oraz
-              podchodzenie do siebie z wzajemnym szacunkiem. Nie stosowanie się
-              do poniższych zasad skutkuje blokadą dostępu do naszego serwisu.{" "}
-            </p>
-          </>
-        ) : (
-          <>
-            <h1>Regulations</h1>
-            <p>
-              Topic is a new form of social media. We focus on the highest
-              quality of our services. Video calls have never been so exciting!
-              We ask you to follow the rules of the regulations, to follow the
-              culture of the chat and to approach each other with mutual
-              respect. Failure to follow these rules will result in blocking
-              access to our service.
-            </p>
-          </>
-        )}
+        <h1>
+          <FormattedMessage id="terms.header" />
+        </h1>
+        <p>
+          <FormattedMessage id="terms.text" />
+        </p>
         {termsFile.map((item, index) => (
           <>
             <Header>{item.text1}</Header>
@@ -64,7 +42,7 @@ const Terms = () => {
           </>
         ))}
       </Container>
-      <Footer lang={lang} />
+      <Footer lang={intl.locale} />
     </MasterStyle>
   )
 }

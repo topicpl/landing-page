@@ -7,6 +7,7 @@ const Hero = ({ lang }) => {
   return (
     <Container>
       <section>
+        {/* Text should be in json files */}
         <Heading>
           {lang === "pl"
             ? "Platforma dla ludzi z"

@@ -1,30 +1,21 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import Helmet from "../components/Helmet"
 import MasterStyle from "../assets/styles/MasterStyle.js"
-import detectBrowserLanguage from "detect-browser-language"
 import styled from "styled-components"
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Footer from "../components/Footer"
 
 export default function Main() {
-  // TODO: change to url language because language change is visible and slow
-  const [lang, setLang] = useState("pl")
-
-  useEffect(() => {
-    const detectedLang = detectBrowserLanguage()
-    // if (detectedLang === "pl-PL" || detectedLang === "pl") setLang("pl")
-    if (detectedLang.includes("pl")) setLang("pl")
-    else setLang("en")
-  }, [lang])
-
+  const intl = useIntl()
   return (
     <MasterStyle>
       <Helmet />
       <Container>
-        <Navbar lang={lang} />
-        <Hero lang={lang} />
-        <Footer lang={lang} />
+        <Navbar lang={intl.locale} />
+        <Hero lang={intl.locale} />
+        <Footer lang={intl.locale} />
       </Container>
     </MasterStyle>
   )

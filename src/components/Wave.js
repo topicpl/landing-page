@@ -17,7 +17,6 @@ const Container = styled.div`
   width: 100%;
 
   svg {
-    /* fill: ${({ theme }) => theme.color.grey[950]}; */
-		fill: red;
+    fill: red;
   }
 `

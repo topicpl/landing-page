@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Helmet from "../components/Helmet"
-import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -9,24 +9,21 @@ import plPP from "../assets/txts/plPP"
 import enPP from "../assets/txts/enPP"
 
 const Privacy = () => {
-  const [lang, setLang] = useState("pl")
+  const intl = useIntl()
   const [ppFile, setLangPP] = useState(plPP)
 
   useEffect(() => {
-    const detectedLang = detectBrowserLanguage()
-    if (detectedLang.includes("pl")) {
-      setLang("pl")
+    if (intl.locale === "pl") {
       setLangPP(plPP)
     } else {
-      setLang("en")
       setLangPP(enPP)
     }
-  }, [lang, ppFile])
+  }, [ppFile])
 
   return (
     <MasterStyle>
       <Helmet />
-      <Navbar lang={lang} />
+      <Navbar lang={intl.locale} />
       <Container>
         {ppFile.map(item => (
           <>
@@ -36,7 +33,7 @@ const Privacy = () => {
           </>
         ))}
       </Container>
-      <Footer lang={lang} />
+      <Footer lang={intl.locale} />
     </MasterStyle>
   )
 }
