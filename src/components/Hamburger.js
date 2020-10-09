@@ -5,6 +5,7 @@ import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
 
 const hamburgerLinks = [
+  // Text should be in json files
   { text: ["Why Topic?", "Dlaczego Topic?"], href: "why-us" },
   { text: ["About", "O nas"], href: "why-us" },
   { text: ["FAQ", "FAQ"], href: "faq" },

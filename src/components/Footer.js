@@ -8,6 +8,7 @@ const Footer = ({ lang }) => {
 
   const footerList = [
     // TODO add sites for help and feedback
+    // Text should be in json files
     { text: ["Help & Support", "Pomoc & Support"], href: "why-us" },
     { text: ["Feedback", "Opinia zwrotna"], href: "why-us" },
     { text: ["Terms", "Warunki korzystania"], href: "terms" },

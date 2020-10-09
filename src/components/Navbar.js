@@ -15,6 +15,7 @@ const Navbar = ({ refProp, lang }) => {
     setMenuState(!isMenuOpen)
   }
 
+  // Text should be in json files
   const sitesLinks = [
     { text: ["Why Topic?", "Dlaczego Topic?"], href: "why-us" },
     { text: ["About", "O nas"], href: "why-us" },

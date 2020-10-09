@@ -1,13 +1,12 @@
 import React from "react"
+import { FormattedMessage } from "gatsby-plugin-intl"
 import styled from "styled-components"
 
-const Posts = ({ lang }) => {
+const Posts = () => {
   return (
     <StyledPosts>
       <PostsHeading>
-        {lang === "pl"
-          ? "Sprawdź nasze media społecznościowe i udostępnij!"
-          : "Check our social media and share!"}
+        <FormattedMessage id="whu-us.posts" />
       </PostsHeading>
       <PostsInner>
         <div

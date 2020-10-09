@@ -15,14 +15,15 @@ const WhyUs = () => {
   return (
     <MasterStyle>
       <Helmet />
-      {/* <Navbar lang={lang} />
+      {/* Text inside these components will be migrated to json files */}
+      <Navbar lang={intl.locale} />
       <Container>
-        <Reason lang={lang} />
-        <Content lang={lang} />
-        <Functions lang={lang} />
-        <Quotes lang={lang} />
+        <Reason lang={intl.locale} />
+        <Content lang={intl.locale} />
+        <Functions lang={intl.locale} />
+        <Quotes lang={intl.locale} />
       </Container>
-      <Footer lang={lang} /> */}
+      <Footer lang={intl.locale} />
     </MasterStyle>
   )
 }

@@ -1,5 +1,6 @@
 {
-	"button:": "Meet someone",
+	"why-us.posts": "Check our social media and share!",
+	"btn-meet:": "Meet someone",
 	"faq.1": "1. After opening our app, the user chooses the language he/ she wishes to talk to others.",
 	"faq.2": "2. Next, the user picks the category he/ she wants to talk about.",
 	"faq.3": "3. User is redirected to a view that just like on snapchat shows only his camera view with options to search for a lobby and copy a share link. The last but not least option is a settings panel that lets you change language and category preferences without restarting the app.",
