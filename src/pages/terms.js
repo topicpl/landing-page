@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Helmet from "../components/Helmet"
-import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -9,26 +9,23 @@ import enTerms from "../assets/txts/enTerms"
 import plTerms from "../assets/txts/plTerms"
 
 const Terms = () => {
-  const [lang, setLang] = useState("pl")
+  const intl = useIntl()
   const [termsFile, setTermsFile] = useState(plTerms)
 
   useEffect(() => {
-    const detectedLang = detectBrowserLanguage()
-    if (detectedLang.includes("pl")) {
-      setLang("pl")
+    if (intl.locale === "pl") {
       setTermsFile(plTerms)
     } else {
-      setLang("en")
       setTermsFile(enTerms)
     }
-  }, [lang, termsFile])
+  }, [termsFile])
 
   return (
     <MasterStyle>
       <Helmet />
-      <Navbar lang={lang} />
+      <Navbar lang={intl.locale} />
       <Container>
-        {lang === "pl" ? (
+        {/* {lang === "pl" ? (
           <>
             <h1>Regulamin</h1>
             <p>
@@ -52,7 +49,7 @@ const Terms = () => {
               access to our service.
             </p>
           </>
-        )}
+        )} */}
         {termsFile.map((item, index) => (
           <>
             <Header>{item.text1}</Header>
@@ -64,7 +61,7 @@ const Terms = () => {
           </>
         ))}
       </Container>
-      <Footer lang={lang} />
+      <Footer lang={intl.locale} />
     </MasterStyle>
   )
 }

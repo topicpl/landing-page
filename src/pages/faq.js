@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Helmet from "../components/Helmet"
-import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -9,24 +9,21 @@ import enFAQ from "../assets/txts/enFAQ"
 import plFAQ from "../assets/txts/plFAQ"
 
 const FAQ = () => {
-  const [lang, setLang] = useState("pl")
+  const intl = useIntl()
   const [faqFile, setFaqFile] = useState(plFAQ)
 
   useEffect(() => {
-    const detectedLang = detectBrowserLanguage()
-    if (detectedLang.includes("pl")) {
-      setLang("pl")
+    if (intl.locale === "pl") {
       setFaqFile(plFAQ)
     } else {
-      setLang("en")
       setFaqFile(enFAQ)
     }
-  }, [lang, faqFile])
+  }, [faqFile])
 
   return (
     <MasterStyle>
       <Helmet />
-      <Navbar lang={lang} />
+      <Navbar lang={intl.locale} />
       <Container>
         {faqFile.map(item => (
           <FAQInner>
@@ -35,7 +32,7 @@ const FAQ = () => {
           </FAQInner>
         ))}
 
-        {lang === "pl" ? (
+        {/* {lang === "pl" ? (
           <Answer>
             1. Po otwarciu aplikacji, użytkownik wybiera język, w którym będzie
             rozmawiał z innymi.
@@ -130,9 +127,9 @@ const FAQ = () => {
             reported. We provide options such as muting the specific person or
             hiding his camera view.
           </Answer>
-        )}
+        )} */}
       </Container>
-      <Footer lang={lang} />
+      <Footer lang={intl.locale} />
     </MasterStyle>
   )
 }

@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Helmet from "../components/Helmet"
-import detectBrowserLanguage from "detect-browser-language"
 import MasterStyle from "../assets/styles/MasterStyle.js"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
 const About = () => {
-  const [lang, setLang] = useState("pl")
-
-  useEffect(() => {
-    const detectedLang = detectBrowserLanguage()
-    if (detectedLang.includes("pl")) setLang("pl")
-    else setLang("en")
-  }, [lang])
-
+  const intl = useIntl()
   return (
     <MasterStyle>
       <Helmet />
-      <Navbar lang={lang} />
+      <Navbar lang={intl.locale} />
       <Container>about</Container>
-      <Footer lang={lang} />
+      <Footer lang={intl.locale} />
     </MasterStyle>
   )
 }
